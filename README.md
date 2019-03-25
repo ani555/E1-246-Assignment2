@@ -62,6 +62,6 @@ The `ckpt` directory contains the trained models which can be used to reproduce 
 
 ## References
 <cite>[1] Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate." arXiv preprint arXiv:1409.0473 (2014).</cite> <br>
-<cite>[2]  Luong, Thang, Hieu Pham, and Christopher D. Manning. "Effective Approaches to Attention-based Neural Machine  Translation." Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. 2015.</cite>
-<cite>[3] Vaswani, Ashish, et al. "Attention is all you need." Advances in Neural Information Processing Systems. 2017.</cite>
+<cite>[2]  Luong, Thang, Hieu Pham, and Christopher D. Manning. "Effective Approaches to Attention-based Neural Machine  Translation." Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. 2015.</cite><br>
+<cite>[3] Vaswani, Ashish, et al. "Attention is all you need." Advances in Neural Information Processing Systems. 2017.</cite><br>
 <cite>[4] Liu, Yang, and Mirella Lapata. "Learning structured text representations." Transactions of the Association of Computational Linguistics 6 (2018): 63-75.</cite>
