@@ -42,21 +42,21 @@ All the hyperparameters are loaded from `config.json` file. Here I have briefly 
 
 ### How to run
 
-All the below commands assume that `config.json` is present in the same directory as the code. If you wish to load `config.json` from some other directory then please specify that using `--config_file` flag as `--config_file dirname/config.json` in all of the commands below
+The below command assumes that `config.json` is present in the same directory as the code. If you wish to load `config.json` from some other directory then please specify that using `--config_file` flag as `--config_file dirname/config.json` in all of the commands below
 
 To train your model run:
 ```
-python nmt.py --mode train --source_file data/train/europarl-v7.de-en.en --target_file data/train/europarl-v7.de-en.de --eval_source_file data/dev/newstest2013.en --eval_target_file data/dev/newstest2013.de --save_path ckpt/model_add_wsa_b128_ep10/  
+python nmt.py --mode train --source_file data/train/europarl-v7.de-en.en --target_file data/train/europarl-v7.de-en.de --eval_source_file data/dev/newstest2013.en --eval_target_file data/dev/newstest2013.de --save_path ckpt/de/model_add_wsa_b128_ep10/  
 ```
 To translate a sentence run:
 ```
-python nmt.py --mode translate --sentence Madam President, I would like to thank Mr Poettering for advertising this debate --load_path ckpt/model_add_wsa_b128_ep10/ --config_file ckpt/model_add_wsa_b128_ep10/config.json
+python nmt.py --mode translate --sentence Madam President, I would like to thank Mr Poettering for advertising this debate --load_path ckpt/de/model_add_wsa_b128_ep10/ --config_file ckpt/de/model_add_wsa_b128_ep10/config.json
 ```
 **Note**: Use the `-plot_attn` flag to plot the attention for the input sentence, by default this is false.
 
 To get the bleu score for a evaluation dataset run:
 ```
-python nmt.py --mode calc_bleu --eval_source_file data/dev/newstest2013.en --eval_target_file data/dev/newstest2013.de  --load_path ckpt/model_add_wsa_b128_ep10/ --config_file ckpt/model_add_wsa_b128_ep10/config.json
+python nmt.py --mode calc_bleu --eval_source_file data/test/test-data.en --eval_target_file data/test/test-data.de  --load_path ckpt/de/model_add_wsa_b128_ep10/ --config_file ckpt/de/model_add_wsa_b128_ep10/config.json
 ```
 
 ## Pretrained Model
