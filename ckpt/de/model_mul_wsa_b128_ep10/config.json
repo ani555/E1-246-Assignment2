@@ -1,0 +1,19 @@
+{
+	"batch_size": 256,
+	"embed_size": 100,
+	"hidden_size": 64,
+	"enc_num_layers": 2,
+	"dec_num_layers": 1,
+	"proj_size": 32,
+	"dropout": 0.2,
+	"attn_type": "multiplicative",
+	"self_attn": false,
+	"intra_temp_attn": false,
+	"dec_attn": false,
+	"epochs": 10,
+	"learning_rate": 0.01,
+	"target_lang": "de",
+	"max_sentence_len": 20,
+	"train_frac": 0.2,
+	"vocab_size": 20000
+}
