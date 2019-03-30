@@ -33,7 +33,9 @@ All the hyperparameters are loaded from `config.json` file. Here I have briefly 
 * `proj_size` : projection vector size (required for Additive and Key-Value attention)
 * `dropout` : dropout probability
 * `attn_type` : the type of attention you want to use (takes values "additive", "multiplicative", "scaled dot-product", "key-value")
-* `self_attn` : use self-attention true/false
+* `self_attn` : use self-attention true/false, setting this true sets dec_attn true by default
+* `dec_attn` : attention on decoder states true/false, if false attention is performed only on encoder states
+* `intra_temp_attn`: if true then attention technique as proposed by Paulus et. al is used
 * `target_lang` : target language for translation (takes values "de", "hi" for german and hindi respectively)
 * `max_sentence_len` : maximum sentence length to be used
 * `train_frac` : fraction of training data to be used for training (should be 1 if you wish to train on complete dataset)
@@ -48,13 +50,13 @@ python nmt.py --mode train --source_file data/train/europarl-v7.de-en.en --targe
 ```
 To translate a sentence run:
 ```
-python nmt.py --mode translate --sentence Madam President, I would like to thank Mr Poettering for advertising this debate --load_path ckpt/model_add_wsa_b128_ep10/ 
+python nmt.py --mode translate --sentence Madam President, I would like to thank Mr Poettering for advertising this debate --load_path ckpt/model_add_wsa_b128_ep10/ --config_file ckpt/model_add_wsa_b128_ep10/config.json
 ```
 **Note**: Use the `-plot_attn` flag to plot the attention for the input sentence, by default this is false.
 
 To get the bleu score for a evaluation dataset run:
 ```
-python nmt.py --mode calc_bleu --eval_source_file data/dev/newstest2013.en --eval_target_file data/dev/newstest2013.de  --load_path ckpt/model_add_wsa_b128_ep10/
+python nmt.py --mode calc_bleu --eval_source_file data/dev/newstest2013.en --eval_target_file data/dev/newstest2013.de  --load_path ckpt/model_add_wsa_b128_ep10/ --config_file ckpt/model_add_wsa_b128_ep10/config.json
 ```
 
 ## Pretrained Model
